@@ -11,4 +11,4 @@ hogy gyakorló feladatok segítségével készülhessetek a vizsgákra.
 
 A gyakorló feladatokhoz nincsen backend kód biztosítva, de a vizsgán biztosítva lesz a backend kód.
 
-[3. részvizsga gyakorló feladatok](second-exam.md)
+[3. részvizsga gyakorló feladatok](third-exam.md)
