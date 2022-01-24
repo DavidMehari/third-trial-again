@@ -20,7 +20,8 @@
 
 ## Database
 
-Feel free to use the provided SQL file [for MySQL](assets/license-plates.sql).
+Feel free to use the provided SQL file [for MySQL](assets/license-plates.sql). Or use [json data](assets/license-plates.json)
+
 
 ## Frontend
 
