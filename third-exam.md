@@ -4,7 +4,6 @@
 
 - The code you're submitting must contain an `index.html` file for the website you're about to create
 - Your script file must be referenced correctly in the HTML file
-- Do not use JavaScript modules (import and export)
 
 ## Highlights
 
