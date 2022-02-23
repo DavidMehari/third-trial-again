@@ -86,6 +86,16 @@ Adatbázishoz használj Firestore-t:
 - Firebase-ből a kiválasztott opciónak megfelelően legyenek az adatok lekérve és megjelenítve a táblázatban
 - Használj Bootstrap osztályokat
 
+## 3. feladat: Szűrés éttermekre
+
+Egy checkbox segítségével szűrd le és frissítsd a táblázat tartalmát
+
+- A checkbox címkéje 'Csak éttermek' legyen
+- Ha a checkbox ki van választva, akkor csak az éttermeket mutassa a táblázat
+- Ha a checkbox üres, akkor az összes típusú látványosságot mutassa
+- Firebase-ből vegye a táblázat az adatait
+- Használj Bootstrap osztályokat
+
 ## Látványosság törlése
 
 - Legyen a főoldali táblázatban egy új oszlop "Műveletek" elnevezéssel
