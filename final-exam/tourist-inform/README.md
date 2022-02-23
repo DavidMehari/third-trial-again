@@ -96,13 +96,14 @@ Egy checkbox segítségével szűrd le és frissítsd a táblázat tartalmát
 - Firebase-ből vegye a táblázat az adatait
 - Használj Bootstrap osztályokat
 
-## Látványosság törlése
+## 4. feladat: Látványosság törlése
 
-- Legyen a főoldali táblázatban egy új oszlop "Műveletek" elnevezéssel
-- A Műveletek oszlop tartalmazzon 1 gombot:
-  - "Törlés"
+- Legyen a főoldali táblázatban egy új oszlop 'Műveletek' elnevezéssel
+- A 'Műveletek' oszlop minden sorába kerüljön egy `delete-{id}` azonosítót
+  tartalmazó "Törlés" felirítú gomb (`{id}` helyére az adott település `id`-ja kerüljön)
 - A táblázatban található "Törlés" gomb megnyomására
-  törlődjön az aktuális sor a táblázatból és az adatbázisból is.
+  törlődjön az aktuális sor a táblázatból és a FireStore adatbázisból is.
+- Használj Bootstrap osztályokat
 
 ## Új látványosság felvitele
 
