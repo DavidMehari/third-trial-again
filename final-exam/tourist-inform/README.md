@@ -100,7 +100,7 @@ Egy checkbox segítségével szűrd le és frissítsd a táblázat tartalmát
 
 - Legyen a főoldali táblázatban egy új oszlop 'Műveletek' elnevezéssel
 - A 'Műveletek' oszlop minden sorába kerüljön egy `delete-{id}` azonosítót
-  tartalmazó "Törlés" felirítú gomb (`{id}` helyére az adott település `id`-ja kerüljön)
+  tartalmazó "Törlés" feliratú gomb (`{id}` helyére az adott település `id`-ja kerüljön)
 - A táblázatban található "Törlés" gomb megnyomására
   törlődjön az aktuális sor a táblázatból és a FireStore adatbázisból is.
 - Használj Bootstrap osztályokat
