@@ -163,5 +163,5 @@ Egy checkbox segítségével szűrd le és frissítsd a táblázat tartalmát
 
 - Buildeld le a munkádat
 - Deployold Firebase hosting szolgáltatónál
-- A repositoryban található [zsemle/public-link.txt](public-link.txt)
+- A repositoryban található [tourist-information/public-link.txt](public-link.txt)
   fájlba írd bele a hosting linkjét, pl.: http://valami-nev-23231dd9.web.app
