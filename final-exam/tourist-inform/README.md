@@ -105,12 +105,10 @@ Egy checkbox segítségével szűrd le és frissítsd a táblázat tartalmát
   törlődjön az aktuális sor a táblázatból és a FireStore adatbázisból is.
 - Használj Bootstrap osztályokat
 
-## Új látványosság felvitele
+## 5. feladat: Új látványosság felvitele 
 
 - A táblázat felett legyen egy "Felvitel" feliratú gomb,
   aminek megnyomására a `/attraction/new` oldalra navigál az applikáció oldalújratöltés nélkül.
-
-## Űrlapok
 
 ### Űrlap mezők
 
@@ -140,15 +138,10 @@ Egy checkbox segítségével szűrd le és frissítsd a táblázat tartalmát
   - ha több, mint 1000 karaktert tartalmaz,
     akkor a következő hibaüzenet legyen kiírva a mező alá: "Nem lehet több, mint 1000 karakter"
 
-### Űrlapok alapértelmezett működése
+### Űrlap működése
 
-- mező elhagyásakor (is) legyen validáció
-  - kötelezően kitöltendő mező esetén a "Hiányzó érték" szöveg legyen megjelenítve
 - legyen egy "Mentés" gomb az űrlap aljában
-- a "Mentés" gomb megnyomására (is) legyen validálva az űrlap
-
-### Látványosság létrehozása oldal `/attraction/new`
-
+- a "Mentés" gomb megnyomására legyen validálva az űrlap
 - A "Mentés" gomb megnyomására legyen elmentve a látványosság adatbázisba
 - Sikeres adatbázisba mentés után:
   - az űrlap mezői legyenek kiürítve
@@ -165,3 +158,10 @@ Egy checkbox segítségével szűrd le és frissítsd a táblázat tartalmát
 #### Sikeres állapot
 
 ![new-invalid](assets/new-success.png)
+
+## 6. feladat: Weboldal hosztolása
+
+- Buildeld le a munkádat
+- Deployold Firebase hosting szolgáltatónál
+- A repositoryban található [zsemle/public-link.txt](public-link.txt)
+  fájlba írd bele a hosting linkjét, pl.: http://valami-nev-23231dd9.web.app
