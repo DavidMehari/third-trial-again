@@ -1,16 +1,20 @@
 import {useState, useEffect} from 'react';
 import db from './firebase/db';
+import {collection, getDocs} from "firebase/firestore";
 
 export default function Attractions() {
   const [attractions, setAttractions] = useState([]);
 
   useEffect(() => {
-    db.collection('attractions').get().then(ref => {
-      ref.docs.forEach(doc => {
-        const attraction = doc.data();
-        setAttractions((previousAttractions) => [...previousAttractions, attraction]);
-      });
-    });
+    async function getData() {
+      const querySnapshot = await getDocs(collection(db, "attractions"));
+      const attractionList = querySnapshot.docs.map((doc) => {
+        return  {...doc.data(), id: doc.id};
+      })
+      setAttractions(attractionList);
+    }
+
+    getData();
   }, [])
 
   return (

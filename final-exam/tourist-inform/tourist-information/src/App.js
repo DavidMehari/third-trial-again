@@ -4,21 +4,19 @@ import './App.scss';
 import React from "react";
 import Attractions from "./Attractions";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route
+  BrowserRouter,
+  Routes,
+  Route,
 } from "react-router-dom";
 
 function App() {
 
   return (
-    <Router>
-      <Switch>
-        <Route path="/">
-          <Attractions />
-        </Route>
-      </Switch>
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Attractions />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
