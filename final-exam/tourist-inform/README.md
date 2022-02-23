@@ -37,7 +37,7 @@ látványosságokat.
 
 1. feladat: Statisztika táblázat készítése
 1. feladat: Szűrés településre 
-1. feladat: Szűrés kategóriára 
+1. feladat: Szűrés éttermekre 
 1. feladat: Látványosság törlése 
 1. feladat: Új látványosság felvitele
 1. feladat: Weboldal hosztolása
@@ -68,6 +68,7 @@ Adatbázishoz használj Firestore-t:
 - az adatok kiszámolásához JavaScript kódot használj (ne adatbázis aggregáló
   függvényt)
 - Táblázat szerkezete (az értékek fiktívek benne):
+- Használj Bootstrap osztályokat
 
 | Település     | Látványosságok | Átlag ár |
 |---------------|----------------|----------|
@@ -78,17 +79,18 @@ Adatbázishoz használj Firestore-t:
 
 ## 2. feladat: Szűrés településre
 
-## Főoldal - látványosságok listázása és szűrése
-
-- A főoldalon található a látványosságok listája egy táblázatban
-- A "Felvitel" gomb alatt legyen egy "Város" címkével ellátott dropdown (`select`).
-- A Város választót használva a táblázat legyen leszűrve a kiválaszott város alapján
-- Legyen a főoldali táblázatban egy új oszlop "Műveletek" elnevezéssel
-- A Műveletek oszlop tartalmazzon 1 gombot:
-  - "Törlés"
+- A adattáblázat felett legyen egy "Település" címkével ellátott dropdown (`select`).
+- A Település választót használva a táblázat legyen leszűrve a kiválaszott település alapján
+- A listában lévő települések mellett legyen egy "Válassz!" opció is.
+- A "Válassz!" opció legyen alapértelmezetten kiválasztva és ebben az esetben az összes adatot mutassa
+- Firebase-ből a kiválasztott opciónak megfelelően legyenek az adatok lekérve és megjelenítve a táblázatban
+- Használj Bootstrap osztályokat
 
 ## Látványosság törlése
 
+- Legyen a főoldali táblázatban egy új oszlop "Műveletek" elnevezéssel
+- A Műveletek oszlop tartalmazzon 1 gombot:
+  - "Törlés"
 - A táblázatban található "Törlés" gomb megnyomására
   törlődjön az aktuális sor a táblázatból és az adatbázisból is.
 
