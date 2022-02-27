@@ -10,6 +10,7 @@ export default function Attractions() {
   const [attractions, setAttractions] = useState([]);
   const [cities, setCities] = useState([]);
   const [restaurantFilter, setRestaurantFilter] = useState(false);
+  const [settlementFilter, setSettlementFilter] = useState(false);
 
   useEffect(() => {
     refreshData();
@@ -24,6 +25,16 @@ export default function Attractions() {
       refreshData();
     }
   }, [restaurantFilter]);
+  
+  useEffect(() => {
+    if (settlementFilter) {
+      simpleQuery('attractions', 'settlement', '==', settlementFilter).then((result) =>
+        setAttractions(result)
+      );
+    } else {
+      refreshData();
+    }
+  }, [settlementFilter]);
 
   console.log(attractions);
 
@@ -61,7 +72,7 @@ export default function Attractions() {
   return (
     <main className={"container"}>
       <h1>Látványosságok</h1>
-      <Filters setRestaurantFilter={setRestaurantFilter} />
+      <Filters setRestaurantFilter={setRestaurantFilter} setSettlementFilter={setSettlementFilter} cities={cities}/>
       <Link className="btn btn-primary mb-3" to={"/attraction/new"}>Felvitel</Link>
       <table className="table table-bordered table-striped">
         <thead>
