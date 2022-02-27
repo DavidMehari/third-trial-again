@@ -9,6 +9,7 @@ function Statistics({attractions, cities}) {
       getAvgPriceByCity(attraction.settlement)
     });
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [attractions]);
   
   function getAttractionCountByCity(city) {
