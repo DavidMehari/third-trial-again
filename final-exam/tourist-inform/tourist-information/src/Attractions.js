@@ -1,22 +1,38 @@
 import {useState, useEffect} from 'react';
 import db from './firebase/db';
 import {collection, getDocs} from "firebase/firestore";
+import Statistics from './components/Statistics';
 
 export default function Attractions() {
   const [attractions, setAttractions] = useState([]);
+  const [cities, setCities] = useState([]);
 
   useEffect(() => {
-    async function getData() {
-      const querySnapshot = await getDocs(collection(db, "attractions"));
-      const attractionList = querySnapshot.docs.map((doc) => {
-        return  {...doc.data(), id: doc.id};
-      })
+    getData()
+    .then((attractionList) => {
       setAttractions(attractionList);
-    }
+      getCities(attractionList);
+    })
+  }, []);
 
-    getData();
-  }, [])
+  async function getData() {
+    const querySnapshot = await getDocs(collection(db, "attractions"));
+    const attractionList = querySnapshot.docs.map((doc) => {
+      return  {...doc.data(), id: doc.id};
+    })
+    return attractionList;
+  }
 
+  function getCities (attractions) {
+    let cities = [];
+    attractions.forEach(attraction => {
+      if (!cities.includes(attraction.settlement)) {
+        cities.push(attraction.settlement);
+      }
+    });
+    setCities(cities);
+  }
+  
   return (
     <main className={"container"}>
       <h1>Látványosságok</h1>
@@ -56,6 +72,7 @@ export default function Attractions() {
         ))}
         </tbody>
       </table>
+      <Statistics attractions={attractions} cities={cities}/>
     </main>
   );
 }
