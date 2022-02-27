@@ -2,18 +2,25 @@ import {useState, useEffect} from 'react';
 import db from './firebase/db';
 import {collection, getDocs} from "firebase/firestore";
 import Statistics from './components/Statistics';
+import { deleteDocument } from './firebase/firebaseFunctions';
 
 export default function Attractions() {
   const [attractions, setAttractions] = useState([]);
   const [cities, setCities] = useState([]);
 
   useEffect(() => {
+    refreshData();
+  }, []);
+
+  console.log(attractions);
+
+  function refreshData() {
     getData()
     .then((attractionList) => {
       setAttractions(attractionList);
       getCities(attractionList);
-    })
-  }, []);
+    });
+  }
 
   async function getData() {
     const querySnapshot = await getDocs(collection(db, "attractions"));
@@ -31,6 +38,11 @@ export default function Attractions() {
       }
     });
     setCities(cities);
+  }
+
+  function handleDelete(docId) {
+    deleteDocument('attractions', docId)
+    .then(() => refreshData());
   }
   
   return (
@@ -57,6 +69,9 @@ export default function Attractions() {
           <th>
             Megjegyzés
           </th>
+          <th>
+            Műveletek
+          </th>
         </tr>
         </thead>
         <tbody>
@@ -68,6 +83,15 @@ export default function Attractions() {
             <td>{attraction.category}</td>
             <td>{attraction.price}</td>
             <td>{attraction.note}</td>
+            <td>
+              <button
+                className="btn btn-danger"
+                onClick={() => handleDelete(attraction.id) }
+                id={"delete-" + attraction.id}
+                >
+                  Törlés
+              </button>
+            </td>
           </tr>
         ))}
         </tbody>
