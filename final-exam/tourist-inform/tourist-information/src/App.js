@@ -8,6 +8,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import NewAttraction from './NewAttraction';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Attractions />} />
+        <Route path="/attraction/new" element={<NewAttraction />} />
       </Routes>
     </BrowserRouter>
   );

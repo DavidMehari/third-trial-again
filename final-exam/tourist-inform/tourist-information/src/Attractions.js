@@ -3,6 +3,7 @@ import db from './firebase/db';
 import {collection, getDocs} from "firebase/firestore";
 import Statistics from './components/Statistics';
 import { deleteDocument } from './firebase/firebaseFunctions';
+import { Link } from 'react-router-dom';
 
 export default function Attractions() {
   const [attractions, setAttractions] = useState([]);
@@ -48,6 +49,8 @@ export default function Attractions() {
   return (
     <main className={"container"}>
       <h1>Látványosságok</h1>
+
+      <Link className="btn btn-primary mb-3" to={"/attraction/new"}>Felvitel</Link>
       <table className="table table-bordered table-striped">
         <thead>
         <tr>

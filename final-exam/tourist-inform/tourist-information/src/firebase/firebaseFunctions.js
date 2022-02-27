@@ -12,3 +12,12 @@ export async function deleteDocument(collectionName, documentId) {
     return 'failed';
   }
 }
+
+export async function addNewDocument(collectionName, newDocument) {
+  try {
+    await addDoc(collection(db, collectionName), newDocument);
+  } catch (error) {
+    return 'failed';
+  }
+  return 'ok';
+}
