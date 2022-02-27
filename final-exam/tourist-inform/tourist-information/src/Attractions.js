@@ -2,16 +2,28 @@ import {useState, useEffect} from 'react';
 import db from './firebase/db';
 import {collection, getDocs} from "firebase/firestore";
 import Statistics from './components/Statistics';
-import { deleteDocument } from './firebase/firebaseFunctions';
+import { deleteDocument, simpleQuery } from './firebase/firebaseFunctions';
 import { Link } from 'react-router-dom';
+import Filters from './components/Filters';
 
 export default function Attractions() {
   const [attractions, setAttractions] = useState([]);
   const [cities, setCities] = useState([]);
+  const [restaurantFilter, setRestaurantFilter] = useState(false);
 
   useEffect(() => {
     refreshData();
   }, []);
+
+  useEffect(() => {
+    if (restaurantFilter) {
+      simpleQuery('attractions', 'category', '==', 'étterem').then((result) =>
+        setAttractions(result)
+      );
+    } else {
+      refreshData();
+    }
+  }, [restaurantFilter]);
 
   console.log(attractions);
 
@@ -49,7 +61,7 @@ export default function Attractions() {
   return (
     <main className={"container"}>
       <h1>Látványosságok</h1>
-
+      <Filters setRestaurantFilter={setRestaurantFilter} />
       <Link className="btn btn-primary mb-3" to={"/attraction/new"}>Felvitel</Link>
       <table className="table table-bordered table-striped">
         <thead>

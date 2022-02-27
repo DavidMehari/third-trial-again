@@ -21,3 +21,19 @@ export async function addNewDocument(collectionName, newDocument) {
   }
   return 'ok';
 }
+
+export async function simpleQuery(collectionName, key, operator, value) {
+  const collRef = collection(db, collectionName);
+
+  const q = query(collRef, where(key, operator, value));
+
+  let result = [];
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    const data = doc.data();
+    data.id = doc.id;
+    result.push(data);
+  });
+
+  return result;
+}
